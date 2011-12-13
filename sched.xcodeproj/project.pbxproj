@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE1E50160E72535BEABEAAAC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAAB /* Cocoa.framework */; };
+		EE1E50160E72535BEABEAAB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAB5 /* InfoPlist.strings */; };
+		EE1E50160E72535BEABEAAB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAB7 /* main.m */; };
+		EE1E50160E72535BEABEAABC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAABB /* Credits.rtf */; };
+		EE1E50160E72535BEABEAABF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAABE /* AppDelegate.m */; };
+		EE1E50160E72535BEABEAAC2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAC1 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EE1E50160E72535BEABEAAA2 /* sched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sched.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE1E50160E72535BEABEAAAB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EE1E50160E72535BEABEAAAE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EE1E50160E72535BEABEAAAF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EE1E50160E72535BEABEAAB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EE1E50160E72535BEABEAAB3 /* sched-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "sched-Info.plist"; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAAB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAAB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAAB9 /* sched-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sched-Prefix.pch"; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAABA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAABD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAABE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAAC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE1E50160E72535BEABEAAA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1E50160E72535BEABEAAAC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE1E50160E72535BEABEAA9E = {
+			isa = PBXGroup;
+			children = (
+				EE1E50160E72535BEABEAA9F /* Products */,
+				EE1E50160E72535BEABEAAAA /* Frameworks */,
+				EE1E50160E72535BEABEAAB1 /* sched */,
+			);
+			sourceTree = "<group>";
+		};
+		EE1E50160E72535BEABEAA9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE1E50160E72535BEABEAAA2 /* sched.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE1E50160E72535BEABEAAAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE1E50160E72535BEABEAAAB /* Cocoa.framework */,
+				EE1E50160E72535BEABEAAAD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE1E50160E72535BEABEAAAD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE1E50160E72535BEABEAAB0 /* Foundation.framework */,
+				EE1E50160E72535BEABEAAAF /* CoreData.framework */,
+				EE1E50160E72535BEABEAAAE /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EE1E50160E72535BEABEAAB1 /* sched */ = {
+			isa = PBXGroup;
+			children = (
+				EE1E50160E72535BEABEAAC1 /* MainMenu.xib */,
+				EE1E50160E72535BEABEAABE /* AppDelegate.m */,
+				EE1E50160E72535BEABEAABD /* AppDelegate.h */,
+				EE1E50160E72535BEABEAAB2 /* Supporting Files */,
+			);
+			path = sched;
+			sourceTree = "<group>";
+		};
+		EE1E50160E72535BEABEAAB2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE1E50160E72535BEABEAABB /* Credits.rtf */,
+				EE1E50160E72535BEABEAAB9 /* sched-Prefix.pch */,
+				EE1E50160E72535BEABEAAB7 /* main.m */,
+				EE1E50160E72535BEABEAAB5 /* InfoPlist.strings */,
+				EE1E50160E72535BEABEAAB3 /* sched-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE1E50160E72535BEABEAAA3 /* sched */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE1E50160E72535BEABEAAA4 /* Build configuration list for PBXNativeTarget "sched" */;
+			buildPhases = (
+				EE1E50160E72535BEABEAAA7 /* Sources */,
+				EE1E50160E72535BEABEAAA8 /* Frameworks */,
+				EE1E50160E72535BEABEAAA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sched;
+			productName = sched;
+			productReference = EE1E50160E72535BEABEAAA2 /* sched.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE1E50160E72535BEABEAA9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = EE1E50160E72535BEABEAA9D /* Build configuration list for PBXProject "sched" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EE1E50160E72535BEABEAA9E;
+			productRefGroup = EE1E50160E72535BEABEAA9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE1E50160E72535BEABEAAA3 /* sched */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE1E50160E72535BEABEAAA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1E50160E72535BEABEAAB6 /* InfoPlist.strings in Resources */,
+				EE1E50160E72535BEABEAABC /* Credits.rtf in Resources */,
+				EE1E50160E72535BEABEAAC2 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE1E50160E72535BEABEAAA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1E50160E72535BEABEAAB8 /* main.m in Sources */,
+				EE1E50160E72535BEABEAABF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EE1E50160E72535BEABEAAB5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE1E50160E72535BEABEAAB4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EE1E50160E72535BEABEAABB /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE1E50160E72535BEABEAABA /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EE1E50160E72535BEABEAAC1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE1E50160E72535BEABEAAC0 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE1E50160E72535BEABEAAA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EE1E50160E72535BEABEAAA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EE1E50160E72535BEABEAAA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sched/sched-Prefix.pch";
+				INFOPLIST_FILE = "sched/sched-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EE1E50160E72535BEABEAAA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sched/sched-Prefix.pch";
+				INFOPLIST_FILE = "sched/sched-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE1E50160E72535BEABEAA9D /* Build configuration list for PBXProject "sched" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE1E50160E72535BEABEAAA0 /* Release */,
+				EE1E50160E72535BEABEAAA1 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE1E50160E72535BEABEAAA4 /* Build configuration list for PBXNativeTarget "sched" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE1E50160E72535BEABEAAA5 /* Release */,
+				EE1E50160E72535BEABEAAA6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE1E50160E72535BEABEAA9C /* Project object */;
+}
