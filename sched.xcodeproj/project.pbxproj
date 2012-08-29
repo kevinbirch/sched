@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19F4090BF0B9BD1B5812D3C8 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E810CD2A92CB010EE15 /* Reminder.m */; };
+		19F40F9B3ABB89313F304CDD /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40B0B62DEB1A818900D80 /* CalendarController.m */; };
+		8FF78BB715EEA5B100632460 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8FF78BB615EEA5B100632460 /* App.icns */; };
 		EE1E50160E72535BEABEAAAC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAAB /* Cocoa.framework */; };
 		EE1E50160E72535BEABEAAB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAB5 /* InfoPlist.strings */; };
 		EE1E50160E72535BEABEAAB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAB7 /* main.m */; };
-		EE1E50160E72535BEABEAABC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAABB /* Credits.rtf */; };
-		EE1E50160E72535BEABEAABF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAABE /* AppDelegate.m */; };
+		EE1E50160E72535BEABEAABF /* Scheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAABE /* Scheduler.m */; };
 		EE1E50160E72535BEABEAAC2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAC1 /* MainMenu.xib */; };
+		EE1E50160E72535BEABEAAC4 /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAC3 /* CalendarStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19F408EA14F3C28BE8B957FC /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
+		19F40ABE43531C4116B713A7 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		19F40B0B62DEB1A818900D80 /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
+		19F40E810CD2A92CB010EE15 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		8F9C064115E472D700F45542 /* sched.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sched.entitlements; sourceTree = "<group>"; };
+		8FF78BB615EEA5B100632460 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = App.icns; path = ../App.icns; sourceTree = "<group>"; };
 		EE1E50160E72535BEABEAAA2 /* sched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1E50160E72535BEABEAAAB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EE1E50160E72535BEABEAAAE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -25,10 +34,10 @@
 		EE1E50160E72535BEABEAAB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EE1E50160E72535BEABEAAB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EE1E50160E72535BEABEAAB9 /* sched-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sched-Prefix.pch"; sourceTree = "<group>"; };
-		EE1E50160E72535BEABEAABA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		EE1E50160E72535BEABEAABD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EE1E50160E72535BEABEAABE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAABD /* Scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAABE /* Scheduler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scheduler.m; sourceTree = "<group>"; };
 		EE1E50160E72535BEABEAAC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAAC3 /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE1E50160E72535BEABEAAAC /* Cocoa.framework in Frameworks */,
+				EE1E50160E72535BEABEAAC4 /* CalendarStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +73,7 @@
 		EE1E50160E72535BEABEAAAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE1E50160E72535BEABEAAC3 /* CalendarStore.framework */,
 				EE1E50160E72535BEABEAAAB /* Cocoa.framework */,
 				EE1E50160E72535BEABEAAAD /* Other Frameworks */,
 			);
@@ -82,9 +93,13 @@
 		EE1E50160E72535BEABEAAB1 /* sched */ = {
 			isa = PBXGroup;
 			children = (
+				19F40ABE43531C4116B713A7 /* Reminder.h */,
+				19F40E810CD2A92CB010EE15 /* Reminder.m */,
+				19F408EA14F3C28BE8B957FC /* CalendarController.h */,
+				19F40B0B62DEB1A818900D80 /* CalendarController.m */,
 				EE1E50160E72535BEABEAAC1 /* MainMenu.xib */,
-				EE1E50160E72535BEABEAABE /* AppDelegate.m */,
-				EE1E50160E72535BEABEAABD /* AppDelegate.h */,
+				EE1E50160E72535BEABEAABE /* Scheduler.m */,
+				EE1E50160E72535BEABEAABD /* Scheduler.h */,
 				EE1E50160E72535BEABEAAB2 /* Supporting Files */,
 			);
 			path = sched;
@@ -93,7 +108,8 @@
 		EE1E50160E72535BEABEAAB2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EE1E50160E72535BEABEAABB /* Credits.rtf */,
+				8FF78BB615EEA5B100632460 /* App.icns */,
+				8F9C064115E472D700F45542 /* sched.entitlements */,
 				EE1E50160E72535BEABEAAB9 /* sched-Prefix.pch */,
 				EE1E50160E72535BEABEAAB7 /* main.m */,
 				EE1E50160E72535BEABEAAB5 /* InfoPlist.strings */,
@@ -128,7 +144,8 @@
 		EE1E50160E72535BEABEAA9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = com.webguys;
 			};
 			buildConfigurationList = EE1E50160E72535BEABEAA9D /* Build configuration list for PBXProject "sched" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -153,8 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE1E50160E72535BEABEAAB6 /* InfoPlist.strings in Resources */,
-				EE1E50160E72535BEABEAABC /* Credits.rtf in Resources */,
 				EE1E50160E72535BEABEAAC2 /* MainMenu.xib in Resources */,
+				8FF78BB715EEA5B100632460 /* App.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE1E50160E72535BEABEAAB8 /* main.m in Sources */,
-				EE1E50160E72535BEABEAABF /* AppDelegate.m in Sources */,
+				EE1E50160E72535BEABEAABF /* Scheduler.m in Sources */,
+				19F40F9B3ABB89313F304CDD /* CalendarController.m in Sources */,
+				19F4090BF0B9BD1B5812D3C8 /* Reminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,14 +198,6 @@
 				EE1E50160E72535BEABEAAB4 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		EE1E50160E72535BEABEAABB /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE1E50160E72535BEABEAABA /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		EE1E50160E72535BEABEAAC1 /* MainMenu.xib */ = {
@@ -204,19 +215,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.7;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -224,9 +259,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -236,24 +281,41 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx10.7;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
 		EE1E50160E72535BEABEAAA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = sched/sched.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sched/sched-Prefix.pch";
 				INFOPLIST_FILE = "sched/sched-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -261,10 +323,13 @@
 		EE1E50160E72535BEABEAAA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = sched/sched.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sched/sched-Prefix.pch";
 				INFOPLIST_FILE = "sched/sched-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
