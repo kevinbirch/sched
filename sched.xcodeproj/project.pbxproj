@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		19F4090BF0B9BD1B5812D3C8 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E810CD2A92CB010EE15 /* Reminder.m */; };
+		19F409D46C939099185AAD3F /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E7775D0DDBD08F3B9DA /* Event.m */; };
 		19F40F9B3ABB89313F304CDD /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40B0B62DEB1A818900D80 /* CalendarController.m */; };
 		8FF78BB715EEA5B100632460 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8FF78BB615EEA5B100632460 /* App.icns */; };
+		8FF78BBA15EEE07100632460 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF78BB915EEE07100632460 /* CalendarItem.m */; };
 		EE1E50160E72535BEABEAAAC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAAB /* Cocoa.framework */; };
 		EE1E50160E72535BEABEAAB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAB5 /* InfoPlist.strings */; };
 		EE1E50160E72535BEABEAAB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAB7 /* main.m */; };
@@ -19,12 +21,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19F40643D0C6B24D7C352E8A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		19F408EA14F3C28BE8B957FC /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
 		19F40ABE43531C4116B713A7 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		19F40B0B62DEB1A818900D80 /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
+		19F40E7775D0DDBD08F3B9DA /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		19F40E810CD2A92CB010EE15 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		8F9C064115E472D700F45542 /* sched.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sched.entitlements; sourceTree = "<group>"; };
 		8FF78BB615EEA5B100632460 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = App.icns; path = ../App.icns; sourceTree = "<group>"; };
+		8FF78BB815EEE07100632460 /* CalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItem.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
+		8FF78BB915EEE07100632460 /* CalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItem.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
 		EE1E50160E72535BEABEAAA2 /* sched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1E50160E72535BEABEAAAB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EE1E50160E72535BEABEAAAE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -93,13 +99,17 @@
 		EE1E50160E72535BEABEAAB1 /* sched */ = {
 			isa = PBXGroup;
 			children = (
+				EE1E50160E72535BEABEAAC1 /* MainMenu.xib */,
+				8FF78BB815EEE07100632460 /* CalendarItem.h */,
+				8FF78BB915EEE07100632460 /* CalendarItem.m */,
+				19F40643D0C6B24D7C352E8A /* Event.h */,
+				19F40E7775D0DDBD08F3B9DA /* Event.m */,
 				19F40ABE43531C4116B713A7 /* Reminder.h */,
 				19F40E810CD2A92CB010EE15 /* Reminder.m */,
 				19F408EA14F3C28BE8B957FC /* CalendarController.h */,
 				19F40B0B62DEB1A818900D80 /* CalendarController.m */,
-				EE1E50160E72535BEABEAAC1 /* MainMenu.xib */,
-				EE1E50160E72535BEABEAABE /* Scheduler.m */,
 				EE1E50160E72535BEABEAABD /* Scheduler.h */,
+				EE1E50160E72535BEABEAABE /* Scheduler.m */,
 				EE1E50160E72535BEABEAAB2 /* Supporting Files */,
 			);
 			path = sched;
@@ -186,6 +196,8 @@
 				EE1E50160E72535BEABEAABF /* Scheduler.m in Sources */,
 				19F40F9B3ABB89313F304CDD /* CalendarController.m in Sources */,
 				19F4090BF0B9BD1B5812D3C8 /* Reminder.m in Sources */,
+				8FF78BBA15EEE07100632460 /* CalendarItem.m in Sources */,
+				19F409D46C939099185AAD3F /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

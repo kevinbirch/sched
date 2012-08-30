@@ -1,11 +1,12 @@
 //
-//  AppDelegate.m
 //  sched
 //
-//  Copyright (c) 2012 Kevin Birch. All rights reserved.
+//  Copyright (c) 2012 kevin birch <kmb@pobox.com>. All rights reserved.
 //
 
 #import "Scheduler.h"
+
+static const int kWindowHeightVariance = 113;
 
 @interface Scheduler (Private)
 
@@ -15,19 +16,30 @@
 
 @implementation Scheduler
 {
+@private
     CalendarController *controller;
     NSWindow *window;
-    Reminder *reminder;
     NSString *selectedTab;
     BOOL optionsVisible;
+    Reminder *reminder;
+    Event *event;
 }
 
 @synthesize window;
-@synthesize reminder;
 @synthesize selectedTab;
 @synthesize optionsVisible;
+@synthesize reminder;
+@synthesize event;
 
-static const int kWindowHeightVariance = 113;
++ (NSSet *) keyPathsForValuesAffectingReady
+{
+    return [NSSet setWithObjects: @"selectedTab", @"reminder.description", @"event.description", @"event.startDate", nil];
+}
+
++ (NSSet *) keyPathsForValuesAffectingDurationLabel
+{
+    return [NSSet setWithObjects: @"event.allDay", @"event.duration", nil];
+}
 
 - (id) init
 {
@@ -37,11 +49,28 @@ static const int kWindowHeightVariance = 113;
         controller = [[CalendarController alloc] init];
         reminder = [[Reminder alloc] init];
         reminder.calendar = controller.defaultReminderCalendar;
+        // xxx - add preferences based event alarm offset
+        reminder.alarmOffset = 0;
+        event = [[Event alloc] init];
+        event.calendar = controller.defaultEventCalendar;
+        // xxx - add preferences based duration
+        event.duration = 1.0;
+        // xxx - add preferences based event alarm offset
+        event.alarmOffset = -900;
+        event.allDayAlarmOffset = 32400;
+
         selectedTab = @"Reminder";
         optionsVisible = YES;
     }
 
     return self;
+}
+
+- (void) applicationDidFinishLaunching:(id) notification
+{
+#pragma unused (notification)
+    [self setOptionsVisible: NO];
+    [window setIsVisible: YES];
 }
 
 - (void) setOptionsVisible: (BOOL)value
@@ -50,11 +79,41 @@ static const int kWindowHeightVariance = 113;
     [self showHideMoreOptions];
 }
 
-- (void)applicationDidFinishLaunching:(id) notification
+- (NSArray *) reminderCalendars
 {
-#pragma unused (notification)
-    [self setOptionsVisible: NO];
-    [window setIsVisible: YES];
+    return [controller reminderCalendars];
+}
+
+- (NSArray *) eventCalendars
+{
+    return [controller eventCalendars];
+}
+
+- (NSString *) durationLabel
+{
+    return [NSString stringWithFormat: @"%@%@", event.allDay ? @"day" : @"hour", event.duration == 1.0 ? @"" : @"s"];
+}
+
+- (BOOL) isReady
+{
+    return [@"Reminder" isEqualToString: selectedTab] ? nil != reminder.description : (nil != event.description && nil != event.startDate);
+}
+
+- (void) create
+{
+    NSError *error;
+    if([@"Reminder" isEqualToString: selectedTab])
+    {
+        error = [controller addReminder: reminder];
+    }
+    else
+    {
+        error = [controller addEvent: event];
+    }
+    if(nil != error)
+    {
+        [[NSAlert alertWithError: error] runModal];
+    }
 }
 
 - (void) showHideMoreOptions
@@ -71,27 +130,6 @@ static const int kWindowHeightVariance = 113;
         frame.origin.y += kWindowHeightVariance;
     }
     [window setFrame: frame display: YES animate: YES];
-}
-
-- (NSArray *) reminderCalendars
-{
-    return [controller reminderCalendars];
-}
-
-- (NSArray *) eventCalendars
-{
-    return [controller eventCalendars];
-}
-
-- (void) create
-{
-    if([@"Reminder" isEqualToString: selectedTab])
-    {
-        [controller addReminder: reminder];
-    }
-    else
-    {
-    }
 }
 
 @end

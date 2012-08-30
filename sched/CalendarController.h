@@ -1,12 +1,14 @@
 //
-//  Created by kmb on 2012-08-21.
-//  JetBrains AppCode
+//  sched
 //
-//  Copyright 2012 kmb.  All rights reserved.
+//  Copyright (c) 2012 kevin birch <kmb@pobox.com>. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "Reminder.h"
+#import "Event.h"
+
+@class Event;
 
 @interface CalendarController : NSObject
 
@@ -15,6 +17,7 @@
 @property (nonatomic, readonly) NSArray *reminderCalendars;
 @property (nonatomic, readonly) NSArray *eventCalendars;
 
--(NSError *) addReminder: (Reminder *)reminder;
+- (NSError *) addReminder: (Reminder *)reminder;
+- (NSError *) addEvent: (Event *)event;
 
 @end
