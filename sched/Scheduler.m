@@ -49,7 +49,7 @@ static const int kWindowHeightVariance = 113;
         controller = [[CalendarController alloc] init];
         reminder = [[Reminder alloc] init];
         reminder.calendar = controller.defaultReminderCalendar;
-        // xxx - add preferences based event alarm offset
+        // xxx - add preferences based reminder alarm offset
         reminder.alarmOffset = 0;
         event = [[Event alloc] init];
         event.calendar = controller.defaultEventCalendar;
@@ -64,6 +64,12 @@ static const int kWindowHeightVariance = 113;
     }
 
     return self;
+}
+
+- (BOOL) applicationShouldTerminateAfterLastWindowClosed: (id)sender
+{
+#pragma unused (sender)
+    return YES;
 }
 
 - (void) applicationDidFinishLaunching:(id) notification
@@ -114,6 +120,8 @@ static const int kWindowHeightVariance = 113;
     {
         [[NSAlert alertWithError: error] runModal];
     }
+
+    [window close];
 }
 
 - (void) showHideMoreOptions
