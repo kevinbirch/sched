@@ -138,8 +138,10 @@ static const int kWindowHeightVariance = 113;
     {
         [[NSAlert alertWithError: error] runModal];
     }
-
-    [window close];
+    else
+    {
+        [window close];
+    }
 }
 
 - (void) showHideMoreOptions

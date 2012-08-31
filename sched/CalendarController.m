@@ -187,17 +187,24 @@ BOOL isReminderList(CalCalendar *calendar)
         return NO;
     }
 
-    // Try to make a task here.
-    CalTask *newTask = [CalTask task];
-    newTask.calendar = calendar;
-    newTask.title    = @"Test Item";
-    NSError *anError = nil;
-    if(![[CalCalendarStore defaultCalendarStore] saveTask: newTask error: &anError])
+    CalTask *task = [CalTask task];
+    task.calendar = calendar;
+    task.title = @"Test Item (created by sched)";
+    task.url = [NSURL URLWithString: @"https://github.com/kevinbirch/sched/wiki/What-Gives"];
+    task.notes = @"This task was created by sched as part of its normal operation.  Please feel free to delete it, we're very sorry for any inconvenience.  For more information, please visit the provided URL.";
+    if(NO == [[CalCalendarStore defaultCalendarStore] saveTask: task error: nil])
     {
         return NO;
     }
 
-    [[CalCalendarStore defaultCalendarStore] removeTask: newTask error: nil];
+    NSError *err;
+    if (NO == ([[CalCalendarStore defaultCalendarStore] removeTask: task error: &err]))
+    {
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary: err.userInfo];
+        [userInfo setObject: @"Something went wrong while trying to clean up a test reminder we created in iCal.  It's probably still there so if you see something named \"Test Item\", please feel free to delete it." forKey: NSLocalizedRecoveryOptionsErrorKey];
+        NSError *betterError = [NSError errorWithDomain: err.domain code: err.code userInfo: userInfo];
+        [[NSAlert alertWithError: betterError] runModal];
+    }
 
     return YES;
 }
