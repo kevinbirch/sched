@@ -5,7 +5,7 @@ program such as [Alfred](http://www.alfredapp.com/), it's easy to dash off a new
 
 When run, sched looks like this:
 
-![initial window](https://github.com/kevinbirch/sched/repo/raw/master/images/sched-reminder.png)
+![initial window](https://github.com/kevinbirch/sched/master/images/sched-reminder.png)
 
 ## Creating Reminders
 
@@ -27,7 +27,7 @@ The application window opens in a collapsed state initially, but additional opti
 needed.  Simply press ⌘B (Item Menu -> More Options) or click on the disclosure triangle next to the text "More
 Options".  The window will now look like this:
 
-![more reminder options](https://github.com/kevinbirch/sched/repo/raw/master/images/sched-reminder-full.png)
+![more reminder options](https://github.com/kevinbirch/sched/master/images/sched-reminder-full.png)
 
 Using these additional controls, you can set all of the other options for a reminder.  The only difference from iCal is
 that the send email, open file and run script alarm types are not supported.
@@ -40,13 +40,13 @@ To create a event, press ⌘E (Item Menu -> Event) or click on the Event tab.  Y
 the start date/time (both are required).  Like the reminder due date field, the start date field supports flexible
 input language, so try what seems natural (see some examples above).
 
-![event form](https://github.com/kevinbirch/sched/repo/raw/master/images/sched-event.png)
+![event form](https://github.com/kevinbirch/sched/repo/images/sched-event.png)
 
 To set additional options press ⌘B (Item Menu -> More Options) or click on the disclosure triangle next to the text
 "More Options".  If you've already expanded the more options area it will remain open as you switch between tabs until
 you hide it again.  The window will now look like this:
 
-![event form](https://github.com/kevinbirch/sched/repo/raw/master/images/sched-event-full.png)
+![event form](https://github.com/kevinbirch/sched/master/images/sched-event-full.png)
 
 By default, an alarm is created 15 minutes before the start time of the event, except for all day events which have a
 default alarm of 9:00AM of the start day.  The various default values for these options can all be configured in the
@@ -63,7 +63,7 @@ invitees are not supported.
 
 In ancient times, I wrote this same application using XCode's support for pure AppleScript applications.  Eventually it
 stopped working, as the calendar substrate changed over time.  However, I've saved the original code for posterity as a
-[gist](gist:3539923).  This will only be interesting to hardcore Apple nerds and software crypto-archaeologists.
+[gist](https://gist.github.com/3539923).  This will only be interesting to hardcore Apple nerds and software crypto-archaeologists.
 
 ## License
 
