@@ -40,7 +40,7 @@ To create a event, press ⌘E (Item Menu -> Event) or click on the Event tab.  Y
 the start date/time (both are required).  Like the reminder due date field, the start date field supports flexible
 input language, so try what seems natural (see some examples above).
 
-![event form](https://raw.github.com/kevinbirch/sched/repo/images/sched-event.png)
+![event form](https://raw.github.com/kevinbirch/sched/master/images/sched-event.png)
 
 To set additional options press ⌘B (Item Menu -> More Options) or click on the disclosure triangle next to the text
 "More Options".  If you've already expanded the more options area it will remain open as you switch between tabs until
