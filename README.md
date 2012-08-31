@@ -3,6 +3,8 @@
 This is a utility program that allows you to quickly add reminders and events to iCal.  When combined with a launcher
 program such as [Alfred](http://www.alfredapp.com/), it's easy to dash off a new calendar item.
 
+You can download the latest version [here](https://github.com/kevinbirch/sched/downloads).
+
 When run, sched looks like this:
 
 ![initial window](https://raw.github.com/kevinbirch/sched/master/images/sched-reminder.png)
