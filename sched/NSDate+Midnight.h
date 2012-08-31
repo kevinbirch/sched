@@ -23,19 +23,9 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "Reminder.h"
-#import "Event.h"
 
-@class Event;
+@interface NSDate (Midnight)
 
-@interface CalendarController : NSObject
-
-@property (nonatomic, copy) NSString *defaultReminderCalendar;
-@property (nonatomic, copy) NSString *defaultEventCalendar;
-@property (nonatomic, readonly) NSArray *reminderCalendars;
-@property (nonatomic, readonly) NSArray *eventCalendars;
-
-- (NSError *) addReminder: (Reminder *)reminder;
-- (NSError *) addEvent: (Event *)event;
+- (NSDate *) toMidnight;
 
 @end

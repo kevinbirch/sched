@@ -22,20 +22,13 @@
  * SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
-#import "Reminder.h"
-#import "Event.h"
+@implementation NSDate (Midnight)
 
-@class Event;
-
-@interface CalendarController : NSObject
-
-@property (nonatomic, copy) NSString *defaultReminderCalendar;
-@property (nonatomic, copy) NSString *defaultEventCalendar;
-@property (nonatomic, readonly) NSArray *reminderCalendars;
-@property (nonatomic, readonly) NSArray *eventCalendars;
-
-- (NSError *) addReminder: (Reminder *)reminder;
-- (NSError *) addEvent: (Event *)event;
+- (NSDate *) toMidnight
+{
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+    NSDateComponents *components = [gregorian components: (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSTimeZoneCalendarUnit) fromDate: self];
+    return [gregorian dateFromComponents: components];
+}
 
 @end
