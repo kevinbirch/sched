@@ -23,11 +23,11 @@
  */
 
 #import <CalendarStore/CalendarStore.h>
-#import "CalendarController.h"
+#import "CalendarStoreController.h"
 
 BOOL isReminderList(CalCalendar *calendar);
 
-@interface CalendarController (Private)
+@interface CalendarStoreController (Private)
 
 - (void) initCalendars;
 - (void) initDefaultCalendars;
@@ -36,7 +36,7 @@ BOOL isReminderList(CalCalendar *calendar);
 
 @end
 
-@implementation CalendarController
+@implementation CalendarStoreController
 {
 @private
     NSString            *defaultReminderCalendar;

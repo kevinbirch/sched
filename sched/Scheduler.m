@@ -23,6 +23,8 @@
  */
 
 #import "Scheduler.h"
+#import "CalendarStoreController.h"
+#import "EventKitController.h"
 
 static const int kWindowHeightVariance = 113;
 
@@ -40,7 +42,7 @@ static const int kWindowHeightVariance = 113;
     BOOL optionsVisible;
     Reminder *reminder;
     Event *event;
-    CalendarController *controller;
+    id<CalendarController> controller;
 }
 
 @synthesize window;
@@ -64,7 +66,7 @@ static const int kWindowHeightVariance = 113;
     self = [super init];
     if(self)
     {
-        controller = [[CalendarController alloc] init];
+        controller = [[CalendarStoreController alloc] init];
         reminder = [[Reminder alloc] init];
         reminder.calendar = controller.defaultReminderCalendar;
         // xxx - add preferences based reminder alarm offset

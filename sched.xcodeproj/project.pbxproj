@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		19F4014F15CAAC95FE1B5A14 /* NSDate+Midnight.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4058453E8912EF5CA166B /* NSDate+Midnight.m */; };
 		19F4090BF0B9BD1B5812D3C8 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E810CD2A92CB010EE15 /* Reminder.m */; };
+		19F409D16763B1F37CA3D453 /* EventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40182DD2C9D3AB7F6C7F0 /* EventKitController.m */; };
 		19F409D46C939099185AAD3F /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E7775D0DDBD08F3B9DA /* Event.m */; };
-		19F40F9B3ABB89313F304CDD /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40B0B62DEB1A818900D80 /* CalendarController.m */; };
+		19F40F9B3ABB89313F304CDD /* CalendarStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */; };
 		8FF78BB715EEA5B100632460 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8FF78BB615EEA5B100632460 /* App.icns */; };
 		8FF78BBA15EEE07100632460 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF78BB915EEE07100632460 /* CalendarItem.m */; };
 		8FFDFD0E15EFDB01000B8994 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FFDFD0D15EFDB01000B8994 /* README.md */; };
@@ -23,12 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19F40182DD2C9D3AB7F6C7F0 /* EventKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventKitController.m; sourceTree = "<group>"; };
+		19F401B19BDFA418CAEE1E70 /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
 		19F4038DFFC197B6BA115AE7 /* NSDate+Midnight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Midnight.h"; sourceTree = "<group>"; };
 		19F4058453E8912EF5CA166B /* NSDate+Midnight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Midnight.m"; sourceTree = "<group>"; };
 		19F40643D0C6B24D7C352E8A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		19F408EA14F3C28BE8B957FC /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
+		19F408EA14F3C28BE8B957FC /* CalendarStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarStoreController.h; sourceTree = "<group>"; };
+		19F409E70556A823EB69DFE3 /* EventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventKitController.h; sourceTree = "<group>"; };
 		19F40ABE43531C4116B713A7 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
-		19F40B0B62DEB1A818900D80 /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
+		19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarStoreController.m; sourceTree = "<group>"; };
 		19F40E7775D0DDBD08F3B9DA /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		19F40E810CD2A92CB010EE15 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		8F9C064115E472D700F45542 /* sched.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sched.entitlements; sourceTree = "<group>"; };
@@ -104,6 +108,9 @@
 		EE1E50160E72535BEABEAAB1 /* sched */ = {
 			isa = PBXGroup;
 			children = (
+				19F409E70556A823EB69DFE3 /* EventKitController.h */,
+				19F40182DD2C9D3AB7F6C7F0 /* EventKitController.m */,
+				19F401B19BDFA418CAEE1E70 /* CalendarController.h */,
 				19F4038DFFC197B6BA115AE7 /* NSDate+Midnight.h */,
 				19F4058453E8912EF5CA166B /* NSDate+Midnight.m */,
 				8FFDFD0D15EFDB01000B8994 /* README.md */,
@@ -114,8 +121,8 @@
 				19F40E7775D0DDBD08F3B9DA /* Event.m */,
 				19F40ABE43531C4116B713A7 /* Reminder.h */,
 				19F40E810CD2A92CB010EE15 /* Reminder.m */,
-				19F408EA14F3C28BE8B957FC /* CalendarController.h */,
-				19F40B0B62DEB1A818900D80 /* CalendarController.m */,
+				19F408EA14F3C28BE8B957FC /* CalendarStoreController.h */,
+				19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */,
 				EE1E50160E72535BEABEAABD /* Scheduler.h */,
 				EE1E50160E72535BEABEAABE /* Scheduler.m */,
 				EE1E50160E72535BEABEAAB2 /* Supporting Files */,
@@ -203,11 +210,12 @@
 			files = (
 				EE1E50160E72535BEABEAAB8 /* main.m in Sources */,
 				EE1E50160E72535BEABEAABF /* Scheduler.m in Sources */,
-				19F40F9B3ABB89313F304CDD /* CalendarController.m in Sources */,
+				19F40F9B3ABB89313F304CDD /* CalendarStoreController.m in Sources */,
 				19F4090BF0B9BD1B5812D3C8 /* Reminder.m in Sources */,
 				8FF78BBA15EEE07100632460 /* CalendarItem.m in Sources */,
 				19F409D46C939099185AAD3F /* Event.m in Sources */,
 				19F4014F15CAAC95FE1B5A14 /* NSDate+Midnight.m in Sources */,
+				19F409D16763B1F37CA3D453 /* EventKitController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

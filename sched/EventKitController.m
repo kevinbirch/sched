@@ -22,17 +22,20 @@
  * SOFTWARE.
  */
 
-#import "Reminder.h"
-#import "Event.h"
+#import "EventKitController.h"
 
-@protocol CalendarController <NSObject>
+@implementation EventKitController
+{
+}
 
-@property (nonatomic, copy) NSString *defaultEventCalendar;
-@property (nonatomic, copy) NSString *defaultReminderCalendar;
-@property (nonatomic, readonly) NSArray *eventCalendars;
-@property (nonatomic, readonly) NSArray *reminderCalendars;
+- (NSError *) addReminder: (Reminder *)reminder
+{
+    return nil;
+}
 
-- (NSError *) addReminder: (Reminder *)reminder;
-- (NSError *) addEvent: (Event *)event;
+- (NSError *) addEvent: (Event *)event
+{
+    return nil;
+}
 
 @end
