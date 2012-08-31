@@ -38,6 +38,11 @@
 @synthesize allDay;
 @synthesize allDayAlarmOffset;
 
++ (NSSet *) keyPathsForValuesAffectingStartDate
+{
+    return [NSSet setWithObjects: @"allDay", nil];
+}
+
 - (id) init
 {
     self = [super init];

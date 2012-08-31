@@ -28,6 +28,7 @@
 @interface Scheduler : NSObject <NSApplicationDelegate>
 
 @property (atomic, strong)      IBOutlet NSWindow  *window;
+@property (atomic, strong)      IBOutlet NSFormCell *eventDate;
 @property (nonatomic, copy)     NSString *selectedTab;
 @property (nonatomic, readonly) Reminder *reminder;
 @property (nonatomic, readonly) Event *event;
@@ -38,5 +39,6 @@
 @property (nonatomic, readonly) NSString *durationLabel;
 
 - (void) create;
+- (IBAction) toggleEventDateFormat:(id)sender;
 
 @end

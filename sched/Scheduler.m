@@ -36,6 +36,7 @@ static const int kWindowHeightVariance = 113;
 {
 @private
     NSWindow *window;
+    NSFormCell *eventDate;
     NSString *selectedTab;
     BOOL optionsVisible;
     Reminder *reminder;
@@ -44,6 +45,7 @@ static const int kWindowHeightVariance = 113;
 }
 
 @synthesize window;
+@synthesize eventDate;
 @synthesize selectedTab;
 @synthesize optionsVisible;
 @synthesize reminder;
@@ -141,6 +143,25 @@ static const int kWindowHeightVariance = 113;
 
     [window close];
 }
+
+- (IBAction) toggleEventDateFormat: (id)sender
+{
+#pragma unused (sender)
+    if(event.allDay)
+    {
+        eventDate.formatter = [[NSDateFormatter alloc] initWithDateFormat: @"%A, %B %1d %Y" allowNaturalLanguage: YES];
+    }
+    else
+    {
+        eventDate.formatter = [[NSDateFormatter alloc] initWithDateFormat: @"%A, %B %1d %Y %1I:%M %p %z" allowNaturalLanguage: YES];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+        NSUInteger componentNames = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSTimeZoneCalendarUnit;
+        NSDateComponents *components = [gregorian components:componentNames fromDate:event.startDate];
+        [components setHour: 9];
+        event.startDate =  [gregorian dateFromComponents: components];
+    }
+}
+
 
 - (void) showHideMoreOptions
 {
