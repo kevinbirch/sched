@@ -7,7 +7,7 @@ You can download the latest version [here](https://github.com/kevinbirch/sched/d
 
 ## Creating Reminders
 
-When run, sched looks like this:
+When you run the app, it looks like this:
 
 ![initial window](https://raw.github.com/kevinbirch/sched/master/images/sched-reminder.png)
 
