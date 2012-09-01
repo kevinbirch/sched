@@ -39,7 +39,7 @@ static NSString * const EventDurationKey = @"EventDuration";
 static NSString * const EventAlarmOffsetKey = @"EventAlarmOffset";
 static NSString * const EventAllDayAlarmOffsetKey = @"EventAllDayAlarmOffset";
 
-NSDictionary *makeDefaultDictionary(id <CalendarController> controller);
+NSDictionary *makeUserDefaultsDictionary(id <CalendarController> controller);
 
 @interface Scheduler (Private)
 
@@ -101,7 +101,7 @@ NSDictionary *makeDefaultDictionary(id <CalendarController> controller);
 {
 #pragma unused (notification)
     [self setOptionsVisible: NO];
-    [[NSUserDefaults standardUserDefaults] registerDefaults: makeDefaultDictionary(controller)];
+    [[NSUserDefaults standardUserDefaults] registerDefaults: makeUserDefaultsDictionary(controller)];
 
     reminder.calendar = [[NSUserDefaults standardUserDefaults] stringForKey: ReminderCalendarKey];
     reminder.alarmType = (AlarmType) [[NSUserDefaults standardUserDefaults] integerForKey: ReminderAlarmTypeKey];
@@ -181,7 +181,7 @@ NSDictionary *makeDefaultDictionary(id <CalendarController> controller);
 
 @end
 
-NSDictionary *makeDefaultDictionary(id<CalendarController> controller)
+NSDictionary *makeUserDefaultsDictionary(id<CalendarController> controller)
 {
     return [NSDictionary dictionaryWithObjectsAndKeys: [controller defaultReminderCalendar], ReminderCalendarKey,
                                                        [NSNumber numberWithInt: PriorityNone], ReminderPriorityKey,
