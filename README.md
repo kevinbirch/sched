@@ -5,11 +5,11 @@ program such as [Alfred](http://www.alfredapp.com/), it's easy to dash off a new
 
 You can download the latest version [here](https://github.com/kevinbirch/sched/downloads).
 
+## Creating Reminders
+
 When run, sched looks like this:
 
 ![initial window](https://raw.github.com/kevinbirch/sched/master/images/sched-reminder.png)
-
-## Creating Reminders
 
 To create a new reminder, simply enter the description, hit the return key and you're done.  Reminder items require at
 least a description, all of the other settings are optional or defaulted.  If you want to set a due
