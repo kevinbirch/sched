@@ -28,6 +28,19 @@
 
 static const int kWindowHeightVariance = 113;
 
+static NSString * const ReminderCalendarKey = @"ReminderCalendar";
+static NSString * const ReminderPriorityKey = @"ReminderPriority";
+static NSString * const ReminderAlarmTypeKey = @"ReminderAlarmType";
+static NSString * const ReminderAlarmOffsetKey = @"ReminderAlarmOffset";
+
+static NSString * const EventCalendarKey = @"EventCalendar";
+static NSString * const EventAlarmTypeKey = @"EventAlarmType";
+static NSString * const EventDurationKey = @"EventDuration";
+static NSString * const EventAlarmOffsetKey = @"EventAlarmOffset";
+static NSString * const EventAllDayAlarmOffsetKey = @"EventAllDayAlarmOffset";
+
+NSDictionary *makeDefaultDictionary(id <CalendarController> controller);
+
 @interface Scheduler (Private)
 
 - (void) showHideMoreOptions;
@@ -66,18 +79,10 @@ static const int kWindowHeightVariance = 113;
     self = [super init];
     if(self)
     {
+        // xxx - this should change based on the OS version!
         controller = [[CalendarStoreController alloc] init];
         reminder = [[Reminder alloc] init];
-        reminder.calendar = controller.defaultReminderCalendar;
-        // xxx - add preferences based reminder alarm offset
-        reminder.alarmOffset = 0;
         event = [[Event alloc] init];
-        event.calendar = controller.defaultEventCalendar;
-        // xxx - add preferences based duration
-        event.duration = 1.0;
-        // xxx - add preferences based event alarm offset
-        event.alarmOffset = -900;
-        event.allDayAlarmOffset = 32400;
 
         selectedTab = @"Reminder";
         optionsVisible = YES;
@@ -96,6 +101,18 @@ static const int kWindowHeightVariance = 113;
 {
 #pragma unused (notification)
     [self setOptionsVisible: NO];
+    [[NSUserDefaults standardUserDefaults] registerDefaults: makeDefaultDictionary(controller)];
+
+    reminder.calendar = [[NSUserDefaults standardUserDefaults] stringForKey: ReminderCalendarKey];
+    reminder.alarmType = (AlarmType) [[NSUserDefaults standardUserDefaults] integerForKey: ReminderAlarmTypeKey];
+    reminder.priority = (Priority) [[NSUserDefaults standardUserDefaults] integerForKey: ReminderPriorityKey];
+    reminder.alarmOffset = [[NSUserDefaults standardUserDefaults] integerForKey: ReminderAlarmOffsetKey];
+    event.calendar = [[NSUserDefaults standardUserDefaults] stringForKey: EventCalendarKey];
+    event.alarmType = (AlarmType) [[NSUserDefaults standardUserDefaults] integerForKey: EventAlarmTypeKey];
+    event.duration = [[NSUserDefaults standardUserDefaults] doubleForKey: EventDurationKey];
+    event.alarmOffset = [[NSUserDefaults standardUserDefaults] integerForKey: EventAlarmOffsetKey];
+    event.allDayAlarmOffset = [[NSUserDefaults standardUserDefaults] integerForKey: EventAllDayAlarmOffsetKey];
+
     [window setIsVisible: YES];
 }
 
@@ -163,3 +180,18 @@ static const int kWindowHeightVariance = 113;
 }
 
 @end
+
+NSDictionary *makeDefaultDictionary(id<CalendarController> controller)
+{
+    return [NSDictionary dictionaryWithObjectsAndKeys: [controller defaultReminderCalendar], ReminderCalendarKey,
+                                                       [NSNumber numberWithInt: PriorityNone], ReminderPriorityKey,
+                                                       [NSNumber numberWithInt: AlarmMessageWithSound], ReminderAlarmTypeKey,
+                                                       [NSNumber numberWithInt: 0], ReminderAlarmOffsetKey,
+                                                       [controller defaultEventCalendar], EventCalendarKey,
+                                                       [NSNumber numberWithInt: AlarmMessageWithSound], EventAlarmTypeKey,
+                                                       [NSNumber numberWithDouble: 1.0], EventDurationKey,
+                                                       [NSNumber numberWithInt: -900], EventAlarmOffsetKey,
+                                                       [NSNumber numberWithInt: 32400], EventAllDayAlarmOffsetKey,
+                                                       nil];
+
+}
