@@ -59,7 +59,7 @@ Please note the following:
 - You can configure most of the options of an event using these controls but location, repetition, free/busy and
 invitees are not supported.
 - Marking an event as all day automatically changes the units of the event duration from "hours" to "days".
-- All day events will still show a time component in the state date/time field, but it will be ignored.
+- All day events will still show a time component in the start date/time field, but it will be ignored.
 
 ## Colophon
 
