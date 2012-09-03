@@ -31,6 +31,7 @@
 		19F4038DFFC197B6BA115AE7 /* NSDate+Midnight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Midnight.h"; sourceTree = "<group>"; };
 		19F4058453E8912EF5CA166B /* NSDate+Midnight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Midnight.m"; sourceTree = "<group>"; };
 		19F40643D0C6B24D7C352E8A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		19F407B13DFAA72F16AD871B /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = TODO.md; sourceTree = "<group>"; };
 		19F408EA14F3C28BE8B957FC /* CalendarStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarStoreController.h; sourceTree = "<group>"; };
 		19F409E70556A823EB69DFE3 /* EventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventKitController.h; sourceTree = "<group>"; };
 		19F40ABE43531C4116B713A7 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		EE1E50160E72535BEABEAA9E = {
 			isa = PBXGroup;
 			children = (
+				19F407B13DFAA72F16AD871B /* TODO.md */,
 				EE1E50160E72535BEABEAA9F /* Products */,
 				EE1E50160E72535BEABEAAAA /* Frameworks */,
 				EE1E50160E72535BEABEAAB1 /* sched */,

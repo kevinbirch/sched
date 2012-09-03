@@ -45,6 +45,7 @@ NSDictionary *makeUserDefaults(id <CalendarController> controller);
 @interface Scheduler (Private)
 
 - (void) showHideMoreOptions;
+- (void) configureModelFromPreferences;
 
 @end
 
@@ -105,14 +106,20 @@ NSDictionary *makeUserDefaults(id <CalendarController> controller);
     [self setOptionsVisible: NO];
     [[NSUserDefaults standardUserDefaults] registerDefaults: makeUserDefaults(controller)];
 
+    [self configureModelFromPreferences];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(configureModelFromPreferences) name: NSUserDefaultsDidChangeNotification object: nil];
+
+    [window setIsVisible: YES];
+}
+
+- (void) configureModelFromPreferences
+{
     reminder.calendar = [[NSUserDefaults standardUserDefaults] stringForKey: ReminderCalendarKey];
     reminder.alarmType = (AlarmType) [[NSUserDefaults standardUserDefaults] integerForKey: ReminderAlarmTypeKey];
     reminder.priority = (Priority) [[NSUserDefaults standardUserDefaults] integerForKey: ReminderPriorityKey];
     event.calendar = [[NSUserDefaults standardUserDefaults] stringForKey: EventCalendarKey];
     event.alarmType = (AlarmType) [[NSUserDefaults standardUserDefaults] integerForKey: EventAlarmTypeKey];
     event.duration = [[NSUserDefaults standardUserDefaults] doubleForKey: EventDurationKey];
-
-    [window setIsVisible: YES];
 }
 
 - (void) setOptionsVisible: (BOOL)value

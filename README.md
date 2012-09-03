@@ -51,9 +51,10 @@ you hide it again.  The window will now look like this:
 
 ![event form](https://raw.github.com/kevinbirch/sched/master/images/sched-event-full.png)
 
-By default, an alarm is created 15 minutes before the start time of the event, except for all day events which have a
-default alarm of 9:00AM of the start day.  The various default values for these options can all be configured in the
-preferences.
+The end date/time for the event will be calculated from the start date plus the value of the duration.  The field
+accepts decimal values, so .25 is 15 minutes and 1.5 is an hour and a half (the default is 1.0 - one hour).  By default,
+an alarm is created 15 minutes before the start time of the event, except for all day events which have a default alarm
+of 9:00AM of the start day.  The various default values for these options can all be configured in the preferences.
 
 Please note the following:
 
