@@ -5,15 +5,16 @@ program such as [Alfred](http://www.alfredapp.com/), it's easy to dash off a new
 
 You can download the latest version [here](https://github.com/kevinbirch/sched/downloads).
 
-When run, sched looks like this:
+## Creating Reminders
+
+When you run the app, it looks like this:
 
 ![initial window](https://raw.github.com/kevinbirch/sched/master/images/sched-reminder.png)
 
-## Creating Reminders
+To create a new reminder, simply enter the description, hit the return key and you're done.
 
-To create a new reminder, simply enter the description, hit the return key and you're done.  Reminder items require at
-least a description, all of the other settings are optional or defaulted.  If you want to set a due
-date, tab to the second field and enter a date and time string such as:
+Reminder items require at least a description, all of the other settings are optional or defaulted.  If you want to 
+set a due date, tab to the second field and enter a date and time string such as:
 
 - today at 5pm
 - friday at 9am
@@ -59,7 +60,7 @@ Please note the following:
 - You can configure most of the options of an event using these controls but location, repetition, free/busy and
 invitees are not supported.
 - Marking an event as all day automatically changes the units of the event duration from "hours" to "days".
-- All day events will still show a time component in the state date/time field, but it will be ignored.
+- All day events will still show a time component in the start date/time field, but it will be ignored.
 
 ## Colophon
 
