@@ -12,6 +12,8 @@
 		19F409D16763B1F37CA3D453 /* EventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40182DD2C9D3AB7F6C7F0 /* EventKitController.m */; };
 		19F409D46C939099185AAD3F /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E7775D0DDBD08F3B9DA /* Event.m */; };
 		19F40F9B3ABB89313F304CDD /* CalendarStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */; };
+		8F0773B515F442F3000BFC9B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0773B315F442F3000BFC9B /* Preferences.m */; };
+		8F0773B615F442F3000BFC9B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0773B415F442F3000BFC9B /* Preferences.xib */; };
 		8FF78BB715EEA5B100632460 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8FF78BB615EEA5B100632460 /* App.icns */; };
 		8FF78BBA15EEE07100632460 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF78BB915EEE07100632460 /* CalendarItem.m */; };
 		8FFDFD0E15EFDB01000B8994 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FFDFD0D15EFDB01000B8994 /* README.md */; };
@@ -35,6 +37,9 @@
 		19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarStoreController.m; sourceTree = "<group>"; };
 		19F40E7775D0DDBD08F3B9DA /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		19F40E810CD2A92CB010EE15 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		8F0773B215F442F3000BFC9B /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = ../Preferences.h; sourceTree = "<group>"; };
+		8F0773B315F442F3000BFC9B /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = ../Preferences.m; sourceTree = "<group>"; };
+		8F0773B415F442F3000BFC9B /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Preferences.xib; path = ../Preferences.xib; sourceTree = "<group>"; };
 		8F9C064115E472D700F45542 /* sched.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sched.entitlements; sourceTree = "<group>"; };
 		8FF78BB615EEA5B100632460 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
 		8FF78BB815EEE07100632460 /* CalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItem.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
@@ -68,6 +73,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F0773B715F4432F000BFC9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FF78BB815EEE07100632460 /* CalendarItem.h */,
+				8FF78BB915EEE07100632460 /* CalendarItem.m */,
+				19F40643D0C6B24D7C352E8A /* Event.h */,
+				19F40E7775D0DDBD08F3B9DA /* Event.m */,
+				19F40ABE43531C4116B713A7 /* Reminder.h */,
+				19F40E810CD2A92CB010EE15 /* Reminder.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8F0773B815F4435A000BFC9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19F409E70556A823EB69DFE3 /* EventKitController.h */,
+				19F40182DD2C9D3AB7F6C7F0 /* EventKitController.m */,
+				19F401B19BDFA418CAEE1E70 /* CalendarController.h */,
+				19F408EA14F3C28BE8B957FC /* CalendarStoreController.h */,
+				19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8F0773B915F4436E000BFC9B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				19F4038DFFC197B6BA115AE7 /* NSDate+Midnight.h */,
+				19F4058453E8912EF5CA166B /* NSDate+Midnight.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		8F0773BE15F44CAD000BFC9B /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				8F0773B415F442F3000BFC9B /* Preferences.xib */,
+				8F0773B215F442F3000BFC9B /* Preferences.h */,
+				8F0773B315F442F3000BFC9B /* Preferences.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
 		EE1E50160E72535BEABEAA9E = {
 			isa = PBXGroup;
 			children = (
@@ -108,23 +157,14 @@
 		EE1E50160E72535BEABEAAB1 /* sched */ = {
 			isa = PBXGroup;
 			children = (
-				19F409E70556A823EB69DFE3 /* EventKitController.h */,
-				19F40182DD2C9D3AB7F6C7F0 /* EventKitController.m */,
-				19F401B19BDFA418CAEE1E70 /* CalendarController.h */,
-				19F4038DFFC197B6BA115AE7 /* NSDate+Midnight.h */,
-				19F4058453E8912EF5CA166B /* NSDate+Midnight.m */,
 				8FFDFD0D15EFDB01000B8994 /* README.md */,
+				8F0773B715F4432F000BFC9B /* Model */,
+				8F0773B815F4435A000BFC9B /* Controllers */,
+				8F0773BE15F44CAD000BFC9B /* Preferences */,
 				EE1E50160E72535BEABEAAC1 /* MainMenu.xib */,
-				8FF78BB815EEE07100632460 /* CalendarItem.h */,
-				8FF78BB915EEE07100632460 /* CalendarItem.m */,
-				19F40643D0C6B24D7C352E8A /* Event.h */,
-				19F40E7775D0DDBD08F3B9DA /* Event.m */,
-				19F40ABE43531C4116B713A7 /* Reminder.h */,
-				19F40E810CD2A92CB010EE15 /* Reminder.m */,
-				19F408EA14F3C28BE8B957FC /* CalendarStoreController.h */,
-				19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */,
 				EE1E50160E72535BEABEAABD /* Scheduler.h */,
 				EE1E50160E72535BEABEAABE /* Scheduler.m */,
+				8F0773B915F4436E000BFC9B /* Util */,
 				EE1E50160E72535BEABEAAB2 /* Supporting Files */,
 			);
 			path = sched;
@@ -198,6 +238,7 @@
 				EE1E50160E72535BEABEAAC2 /* MainMenu.xib in Resources */,
 				8FF78BB715EEA5B100632460 /* App.icns in Resources */,
 				8FFDFD0E15EFDB01000B8994 /* README.md in Resources */,
+				8F0773B615F442F3000BFC9B /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +257,7 @@
 				19F409D46C939099185AAD3F /* Event.m in Sources */,
 				19F4014F15CAAC95FE1B5A14 /* NSDate+Midnight.m in Sources */,
 				19F409D16763B1F37CA3D453 /* EventKitController.m in Sources */,
+				8F0773B515F442F3000BFC9B /* Preferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +381,7 @@
 		EE1E50160E72535BEABEAAA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = sched/sched.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -355,6 +398,7 @@
 		EE1E50160E72535BEABEAAA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = sched/sched.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

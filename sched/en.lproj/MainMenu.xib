@@ -29,7 +29,6 @@
 			<string>NSTabViewItem</string>
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
-			<string>NSUserDefaultsController</string>
 			<string>NSView</string>
 			<string>NSWindowTemplate</string>
 		</array>
@@ -1914,9 +1913,6 @@
 				<bool key="NSEditable">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
 			</object>
-			<object class="NSUserDefaultsController" id="750370203">
-				<bool key="NSSharedInstance">YES</bool>
-			</object>
 			<object class="NSArrayController" id="1063874012">
 				<string key="NSObjectClassName">NSString</string>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
@@ -1952,14 +1948,6 @@
 						<reference key="destination" ref="837997274"/>
 					</object>
 					<int key="connectionID">669</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">terminate:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="50250485"/>
-					</object>
-					<int key="connectionID">814</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2011,14 +1999,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">miniaturize:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="357302391"/>
-					</object>
-					<int key="connectionID">822</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">showHelp:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="171947089"/>
@@ -2048,6 +2028,14 @@
 						<reference key="destination" ref="638505771"/>
 					</object>
 					<int key="connectionID">1059</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">performClose:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="50250485"/>
+					</object>
+					<int key="connectionID">1086</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2172,6 +2160,14 @@
 						</object>
 					</object>
 					<int key="connectionID">790</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="635095458"/>
+						<reference key="destination" ref="184452532"/>
+					</object>
+					<int key="connectionID">1083</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2335,6 +2331,26 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: showPreferences</string>
+						<reference key="source" ref="435409517"/>
+						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="435409517"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">target: showPreferences</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">showPreferences</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSConditionallySetsEnabled</string>
+								<boolean value="NO" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1082</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: self.optionsVisible</string>
 						<reference key="source" ref="184452532"/>
 						<reference key="destination" ref="976324537"/>
@@ -2352,6 +2368,14 @@
 						</object>
 					</object>
 					<int key="connectionID">908</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="184452532"/>
+						<reference key="destination" ref="368603868"/>
+					</object>
+					<int key="connectionID">1084</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2421,10 +2445,14 @@
 							<string key="NSLabel">contentArray: reminderCalendars</string>
 							<string key="NSBinding">contentArray</string>
 							<string key="NSKeyPath">reminderCalendars</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSConditionallySetsEditable</string>
+								<boolean value="NO" key="NS.object.0"/>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">837</int>
+					<int key="connectionID">1092</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2737,15 +2765,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentArray: self.eventCalendars</string>
+						<string key="label">contentArray: eventCalendars</string>
 						<reference key="source" ref="410022905"/>
 						<reference key="destination" ref="976324537"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="410022905"/>
 							<reference key="NSDestination" ref="976324537"/>
-							<string key="NSLabel">contentArray: self.eventCalendars</string>
+							<string key="NSLabel">contentArray: eventCalendars</string>
 							<string key="NSBinding">contentArray</string>
-							<string key="NSKeyPath">self.eventCalendars</string>
+							<string key="NSKeyPath">eventCalendars</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSConditionallySetsEditable</string>
 								<boolean value="NO" key="NS.object.0"/>
@@ -2753,7 +2781,7 @@
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">987</int>
+					<int key="connectionID">1094</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2925,7 +2953,6 @@
 							<reference ref="226864141"/>
 							<reference ref="298829358"/>
 							<reference ref="1015172094"/>
-							<reference ref="30488363"/>
 							<reference ref="55822948"/>
 							<reference ref="316020293"/>
 							<reference ref="136172136"/>
@@ -2933,6 +2960,7 @@
 							<reference ref="712693861"/>
 							<reference ref="473224697"/>
 							<reference ref="333206515"/>
+							<reference ref="30488363"/>
 						</array>
 						<reference key="parent" ref="347522224"/>
 					</object>
@@ -3543,11 +3571,6 @@
 						<reference key="parent" ref="184638231"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">752</int>
-						<reference key="object" ref="750370203"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">755</int>
 						<reference key="object" ref="524399555"/>
 						<reference key="parent" ref="0"/>
@@ -4111,7 +4134,6 @@
 				<string key="685.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="689.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="690.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="752.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="755.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="828.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="846.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4196,7 +4218,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1078</int>
+			<int key="maxID">1094</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

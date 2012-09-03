@@ -25,6 +25,7 @@
 #import "Scheduler.h"
 #import "CalendarStoreController.h"
 #import "EventKitController.h"
+#import "Preferences.h"
 
 static const int kWindowHeightVariance = 113;
 
@@ -39,7 +40,7 @@ static NSString * const EventDurationKey = @"EventDuration";
 static NSString * const EventAlarmOffsetKey = @"EventAlarmOffset";
 static NSString * const EventAllDayAlarmOffsetKey = @"EventAllDayAlarmOffset";
 
-NSDictionary *makeUserDefaultsDictionary(id <CalendarController> controller);
+NSDictionary *makeUserDefaults(id <CalendarController> controller);
 
 @interface Scheduler (Private)
 
@@ -56,6 +57,7 @@ NSDictionary *makeUserDefaultsDictionary(id <CalendarController> controller);
     Reminder *reminder;
     Event *event;
     id<CalendarController> controller;
+    Preferences *preferences;
 }
 
 @synthesize window;
@@ -101,17 +103,14 @@ NSDictionary *makeUserDefaultsDictionary(id <CalendarController> controller);
 {
 #pragma unused (notification)
     [self setOptionsVisible: NO];
-    [[NSUserDefaults standardUserDefaults] registerDefaults: makeUserDefaultsDictionary(controller)];
+    [[NSUserDefaults standardUserDefaults] registerDefaults: makeUserDefaults(controller)];
 
     reminder.calendar = [[NSUserDefaults standardUserDefaults] stringForKey: ReminderCalendarKey];
     reminder.alarmType = (AlarmType) [[NSUserDefaults standardUserDefaults] integerForKey: ReminderAlarmTypeKey];
     reminder.priority = (Priority) [[NSUserDefaults standardUserDefaults] integerForKey: ReminderPriorityKey];
-    reminder.alarmOffset = [[NSUserDefaults standardUserDefaults] integerForKey: ReminderAlarmOffsetKey];
     event.calendar = [[NSUserDefaults standardUserDefaults] stringForKey: EventCalendarKey];
     event.alarmType = (AlarmType) [[NSUserDefaults standardUserDefaults] integerForKey: EventAlarmTypeKey];
     event.duration = [[NSUserDefaults standardUserDefaults] doubleForKey: EventDurationKey];
-    event.alarmOffset = [[NSUserDefaults standardUserDefaults] integerForKey: EventAlarmOffsetKey];
-    event.allDayAlarmOffset = [[NSUserDefaults standardUserDefaults] integerForKey: EventAllDayAlarmOffsetKey];
 
     [window setIsVisible: YES];
 }
@@ -147,10 +146,13 @@ NSDictionary *makeUserDefaultsDictionary(id <CalendarController> controller);
     NSError *error;
     if([@"Reminder" isEqualToString: selectedTab])
     {
+        reminder.alarmOffset = [[NSUserDefaults standardUserDefaults] doubleForKey: ReminderAlarmOffsetKey] * -60;
         error = [controller addReminder: reminder];
     }
     else
     {
+        event.alarmOffset = [[NSUserDefaults standardUserDefaults] integerForKey: EventAlarmOffsetKey] * -60;
+        event.allDayAlarmOffset = [[NSUserDefaults standardUserDefaults] doubleForKey: EventAllDayAlarmOffsetKey];
         error = [controller addEvent: event];
     }
     if(nil != error)
@@ -159,9 +161,20 @@ NSDictionary *makeUserDefaultsDictionary(id <CalendarController> controller);
     }
     else
     {
-        [window close];
+        [window performClose: self];
     }
 }
+
+- (void) showPreferences
+{
+    if(nil == preferences)
+    {
+        preferences = [[Preferences alloc] initWithController: controller];
+    }
+
+    [preferences showWindow: self];
+}
+
 
 - (void) showHideMoreOptions
 {
@@ -181,17 +194,16 @@ NSDictionary *makeUserDefaultsDictionary(id <CalendarController> controller);
 
 @end
 
-NSDictionary *makeUserDefaultsDictionary(id<CalendarController> controller)
+NSDictionary *makeUserDefaults(id<CalendarController> controller)
 {
-    return [NSDictionary dictionaryWithObjectsAndKeys: [controller defaultReminderCalendar], ReminderCalendarKey,
-                                                       [NSNumber numberWithInt: PriorityNone], ReminderPriorityKey,
-                                                       [NSNumber numberWithInt: AlarmMessageWithSound], ReminderAlarmTypeKey,
-                                                       [NSNumber numberWithInt: 0], ReminderAlarmOffsetKey,
-                                                       [controller defaultEventCalendar], EventCalendarKey,
-                                                       [NSNumber numberWithInt: AlarmMessageWithSound], EventAlarmTypeKey,
-                                                       [NSNumber numberWithDouble: 1.0], EventDurationKey,
-                                                       [NSNumber numberWithInt: -900], EventAlarmOffsetKey,
-                                                       [NSNumber numberWithInt: 32400], EventAllDayAlarmOffsetKey,
-                                                       nil];
+    return @{ReminderCalendarKey: [controller defaultReminderCalendar],
+             ReminderPriorityKey: @(PriorityNone),
+             ReminderAlarmTypeKey: @(AlarmMessageWithSound),
+             ReminderAlarmOffsetKey: @15,
+             EventCalendarKey: [controller defaultEventCalendar],
+             EventAlarmTypeKey: @(AlarmMessageWithSound),
+             EventDurationKey: @1.0,
+             EventAlarmOffsetKey: @15,
+             EventAllDayAlarmOffsetKey: @32400.0};
 
 }

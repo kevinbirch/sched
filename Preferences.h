@@ -25,19 +25,19 @@
 #import <Cocoa/Cocoa.h>
 #import "CalendarController.h"
 
-@interface Scheduler : NSObject <NSApplicationDelegate>
+@interface Preferences : NSWindowController
 
-@property (atomic, strong)      IBOutlet NSWindow  *window;
-@property (nonatomic, copy)     NSString *selectedTab;
-@property (nonatomic, readonly) Reminder *reminder;
-@property (nonatomic, readonly) Event *event;
+@property (atomic, strong) IBOutlet NSView *remindersView;
+@property (atomic, strong) IBOutlet NSView *eventsView;
+@property (atomic, strong) IBOutlet NSToolbar *toolbar;
+@property (atomic, strong) IBOutlet NSDatePicker *datePicker;
 @property (nonatomic, readonly) NSArray *reminderCalendars;
 @property (nonatomic, readonly) NSArray *eventCalendars;
-@property (nonatomic, readonly, getter=isReady) BOOL ready;
-@property (nonatomic, assign, setter=setOptionsVisible:) BOOL optionsVisible;
-@property (nonatomic, readonly) NSString *durationLabel;
+@property (nonatomic, copy) NSDate *allDayAlarm;
 
-- (void) create;
-- (void) showPreferences;
+- (id) initWithController: (id <CalendarController>)calendarController;
+
+- (IBAction) showRemindersView: (id)sender;
+- (IBAction) showEventsView: (id)sender;
 
 @end
