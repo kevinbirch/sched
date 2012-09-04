@@ -28,6 +28,36 @@
 {
 }
 
+- (NSString *) defaultEventCalendar
+{
+    return nil;
+}
+
+- (NSString *) defaultReminderCalendar
+{
+    return nil;
+}
+
+- (NSArray *) eventCalendars
+{
+    return nil;
+}
+
+- (NSArray *) reminderCalendars
+{
+    return nil;
+}
+
+- (BOOL) hasReminderCalendar: (NSString *)string
+{
+    return NO;
+}
+
+- (BOOL) hasEventCalendar: (NSString *)string
+{
+    return NO;
+}
+
 - (NSError *) addReminder: (Reminder *)reminder
 {
     return nil;

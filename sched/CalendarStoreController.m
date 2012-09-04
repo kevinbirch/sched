@@ -30,7 +30,6 @@ BOOL isReminderList(CalCalendar *calendar);
 @interface CalendarStoreController (Private)
 
 - (void) initCalendars;
-- (void) initDefaultCalendars;
 - (void) addCommonAttributesOf: (CalendarItem *)item to: (CalCalendarItem *)calItem;
 - (void) addAlarmTo: (CalCalendarItem *)calItem offset: (NSTimeInterval)interval type: (AlarmType)type;
 
@@ -39,14 +38,9 @@ BOOL isReminderList(CalCalendar *calendar);
 @implementation CalendarStoreController
 {
 @private
-    NSString            *defaultReminderCalendar;
-    NSString            *defaultEventCalendar;
     NSMutableDictionary *reminderCalendarsByName;
     NSMutableDictionary *eventCalendarsByName;
 }
-
-@synthesize defaultReminderCalendar;
-@synthesize defaultEventCalendar;
 
 - (id) init
 {
@@ -63,7 +57,7 @@ BOOL isReminderList(CalCalendar *calendar);
 {
     NSArray *calendars = [[CalCalendarStore defaultCalendarStore] calendars];
     reminderCalendarsByName = [NSMutableDictionary dictionary];
-    eventCalendarsByName = [NSMutableDictionary dictionary];
+    eventCalendarsByName    = [NSMutableDictionary dictionary];
     for(CalCalendar *calendar in [calendars filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"isEditable == YES"]])
     {
         if(isReminderList(calendar))
@@ -75,15 +69,18 @@ BOOL isReminderList(CalCalendar *calendar);
             eventCalendarsByName[calendar.title] = calendar;
         }
     }
-    [self initDefaultCalendars];
 }
 
-- (void) initDefaultCalendars
+- (NSString *) defaultReminderCalendar
 {
     CalCalendar *reminderCalendar = reminderCalendarsByName[@"Home"];
-    defaultReminderCalendar = (nil != reminderCalendar ? reminderCalendar : (CalCalendar *) [reminderCalendarsByName allValues][0]).title;
+    return (nil != reminderCalendar ? reminderCalendar : (CalCalendar *) [reminderCalendarsByName allValues][0]).title;
+}
+
+- (NSString *) defaultEventCalendar
+{
     CalCalendar *eventCalendar = eventCalendarsByName[@"Home"];
-    defaultEventCalendar = (nil != eventCalendar ? eventCalendar : (CalCalendar *) [eventCalendarsByName allValues][0]).title;
+    return (nil != eventCalendar ? eventCalendar : (CalCalendar *) [eventCalendarsByName allValues][0]).title;
 }
 
 - (NSArray *) reminderCalendars
@@ -96,13 +93,23 @@ BOOL isReminderList(CalCalendar *calendar);
     return [reminderCalendarsByName allKeys];
 }
 
+- (BOOL) hasReminderCalendar: (NSString *)name
+{
+    return reminderCalendarsByName[name] != nil;
+}
+
+- (BOOL) hasEventCalendar: (NSString *)name
+{
+    return eventCalendarsByName[name] != nil;
+}
+
 - (NSError *) addReminder: (Reminder *)reminder
 {
     CalTask *calTask = [CalTask task];
     calTask.calendar = reminderCalendarsByName[reminder.calendar];
     [self addCommonAttributesOf: reminder to: calTask];
 
-    if (nil != reminder.dueDate)
+    if(nil != reminder.dueDate)
     {
         calTask.dueDate = reminder.dueDate;
 
@@ -110,8 +117,14 @@ BOOL isReminderList(CalCalendar *calendar);
         [self addAlarmTo: calTask offset: ([reminder.dueDate timeIntervalSinceDate: midnight] + reminder.alarmOffset) type: reminder.alarmType];
     }
 
-    if (reminder.completed) calTask.isCompleted = YES;
-    if (PriorityNone != reminder.priority) calTask.priority = reminder.priority;
+    if(reminder.completed)
+    {
+        calTask.isCompleted = YES;
+    }
+    if(PriorityNone != reminder.priority)
+    {
+        calTask.priority = reminder.priority;
+    }
 
     NSError *error = nil;
     [[CalCalendarStore defaultCalendarStore] saveTask: calTask error: &error];
@@ -123,7 +136,7 @@ BOOL isReminderList(CalCalendar *calendar);
     CalEvent *calEvent = [CalEvent event];
     calEvent.calendar = eventCalendarsByName[event.calendar];
     [self addCommonAttributesOf: event to: calEvent];
-    calEvent.isAllDay = event.allDay;
+    calEvent.isAllDay  = event.allDay;
     calEvent.startDate = event.startDate;
 
     if(event.allDay)
@@ -152,8 +165,14 @@ BOOL isReminderList(CalCalendar *calendar);
 - (void) addCommonAttributesOf: (CalendarItem *)item to: (CalCalendarItem *)calItem
 {
     calItem.title = item.description;
-    if (nil != item.note) calItem.notes = item.note;
-    if (nil != item.url) calItem.url = [NSURL URLWithString: item.url];
+    if(nil != item.note)
+    {
+        calItem.notes = item.note;
+    }
+    if(nil != item.url)
+    {
+        calItem.url = [NSURL URLWithString: item.url];
+    }
 }
 
 - (void) addAlarmTo: (CalCalendarItem *)calItem offset: (NSTimeInterval)interval type: (AlarmType)type
@@ -188,16 +207,16 @@ BOOL isReminderList(CalCalendar *calendar)
 
     CalTask *task = [CalTask task];
     task.calendar = calendar;
-    task.title = @"Test Item (created by sched)";
-    task.url = [NSURL URLWithString: @"https://github.com/kevinbirch/sched/wiki/What-Gives"];
-    task.notes = @"This task was created by sched as part of its normal operation.  Please feel free to delete it, we're very sorry for any inconvenience.  For more information, please visit the provided URL.";
+    task.title    = @"Test Item (created by sched)";
+    task.url      = [NSURL URLWithString: @"https://github.com/kevinbirch/sched/wiki/What-Gives"];
+    task.notes    = @"This task was created by sched as part of its normal operation.  Please feel free to delete it, we're very sorry for any inconvenience.  For more information, please visit the provided URL.";
     if(NO == [[CalCalendarStore defaultCalendarStore] saveTask: task error: nil])
     {
         return NO;
     }
 
     NSError *err;
-    if (NO == ([[CalCalendarStore defaultCalendarStore] removeTask: task error: &err]))
+    if(NO == ([[CalCalendarStore defaultCalendarStore] removeTask: task error: &err]))
     {
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary: err.userInfo];
         userInfo[NSLocalizedRecoveryOptionsErrorKey] = @"Something went wrong while trying to clean up a test reminder we created in iCal.  It's probably still there so if you see something named \"Test Item\", please feel free to delete it.";

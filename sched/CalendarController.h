@@ -27,12 +27,14 @@
 
 @protocol CalendarController <NSObject>
 
-@property (nonatomic, copy) NSString *defaultEventCalendar;
-@property (nonatomic, copy) NSString *defaultReminderCalendar;
-@property (nonatomic, readonly) NSArray *eventCalendars;
-@property (nonatomic, readonly) NSArray *reminderCalendars;
+@property (nonatomic, readonly) NSString *defaultEventCalendar;
+@property (nonatomic, readonly) NSString *defaultReminderCalendar;
+@property (nonatomic, readonly) NSArray  *eventCalendars;
+@property (nonatomic, readonly) NSArray  *reminderCalendars;
 
 - (NSError *) addReminder: (Reminder *)reminder;
 - (NSError *) addEvent: (Event *)event;
 
+- (BOOL) hasReminderCalendar: (NSString *)string;
+- (BOOL) hasEventCalendar: (NSString *)string;
 @end
