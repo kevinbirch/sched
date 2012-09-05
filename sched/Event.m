@@ -28,8 +28,8 @@
 {
 @private
     NSDate *startDate;
-    double duration;
-    BOOL allDay;
+    double         duration;
+    BOOL           allDay;
     NSTimeInterval allDayAlarmOffset;
 }
 
@@ -41,7 +41,7 @@
 - (id) init
 {
     self = [super init];
-    if(self)
+    if (self)
     {
         allDay = NO;
     }
@@ -51,7 +51,7 @@
 
 - (void) setNilValueForKey: (NSString *)key
 {
-    if([@"duration" isEqualToString: key])
+    if ([@"duration" isEqualToString: key])
     {
         [self setDuration: 0.0];
     }

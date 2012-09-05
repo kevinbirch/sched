@@ -22,50 +22,172 @@
  * SOFTWARE.
  */
 
+#import <EventKit/EventKit.h>
 #import "EventKitController.h"
+
+static NSUInteger const kCalendarUnits = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSTimeZoneCalendarUnit;
+
+NSDictionary *asDictionary(NSArray *calendars);
+
+@interface EventKitController (Private)
+
+- (void) addCommonAttributesOf: (CalendarItem *)item to: (EKCalendarItem *)ekCalendarItem;
+
+@end
 
 @implementation EventKitController
 {
+@private
+    EKEventStore *store;
+    NSDictionary *reminderCalendarsByTitle;
+    NSDictionary *eventCalendarsByTitle;
 }
 
-- (NSString *) defaultEventCalendar
+- (id) init
 {
-    return nil;
+    self = [super init];
+    if (self)
+    {
+        store                    = [[EKEventStore alloc] initWithAccessToEntityTypes: EKEntityMaskReminder];
+        reminderCalendarsByTitle = asDictionary([store calendarsForEntityType: EKEntityTypeReminder]);
+        eventCalendarsByTitle    = asDictionary([store calendarsForEntityType: EKEntityTypeEvent]);
+    }
+
+    return self;
 }
 
 - (NSString *) defaultReminderCalendar
 {
-    return nil;
+    return [store defaultCalendarForNewReminders].title;
 }
 
-- (NSArray *) eventCalendars
+- (NSString *) defaultEventCalendar
 {
-    return nil;
+    return [store defaultCalendarForNewEvents].title;
 }
 
 - (NSArray *) reminderCalendars
 {
-    return nil;
+    return [reminderCalendarsByTitle allKeys];
 }
 
-- (BOOL) hasReminderCalendar: (NSString *)string
+- (NSArray *) eventCalendars
 {
-    return NO;
+    return [eventCalendarsByTitle allKeys];
 }
 
-- (BOOL) hasEventCalendar: (NSString *)string
+- (BOOL) hasReminderCalendar: (NSString *)name
 {
-    return NO;
+    return nil != reminderCalendarsByTitle[name];
+}
+
+- (BOOL) hasEventCalendar: (NSString *)name
+{
+    return nil != eventCalendarsByTitle[name];
 }
 
 - (NSError *) addReminder: (Reminder *)reminder
 {
-    return nil;
+    EKReminder *ekReminder = [EKReminder reminderWithEventStore: store];
+    ekReminder.calendar = reminderCalendarsByTitle[reminder.calendar];
+    [self addCommonAttributesOf: reminder to: ekReminder];
+    ekReminder.completed = reminder.completed;
+
+    if (nil != reminder.dueDate)
+    {
+        NSCalendar       *gregorian  = [[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
+        NSDateComponents *components = [gregorian components: kCalendarUnits fromDate: reminder.dueDate];
+        ekReminder.dueDateComponents = components;
+
+        NSDate *midnight = [reminder.dueDate toMidnight];
+        [self addAlarmTo: ekReminder offset: ([reminder.dueDate timeIntervalSinceDate: midnight] + reminder.alarmOffset) type: reminder.alarmType];
+    }
+
+    NSError *error = nil;
+    [store saveReminder: ekReminder commit: YES error: &error];
+
+    return error;
 }
 
 - (NSError *) addEvent: (Event *)event
 {
-    return nil;
+    EKEvent *ekEvent = [EKEvent eventWithEventStore: store];
+    ekEvent.calendar = eventCalendarsByTitle[event.calendar];
+    [self addCommonAttributesOf: event to: ekEvent];
+    ekEvent.allDay    = event.allDay;
+    ekEvent.startDate = event.startDate;
+
+    if (event.allDay)
+    {
+        if (round(event.duration) > 1)
+        {
+            ekEvent.endDate = ([event.startDate dateByAddingTimeInterval: round(event.duration) * 86400]);
+        }
+        else
+        {
+            ekEvent.endDate = event.startDate;
+        }
+        [self addAlarmTo: ekEvent offset: event.allDayAlarmOffset type: event.alarmType];
+    }
+    else
+    {
+        ekEvent.endDate = ([event.startDate dateByAddingTimeInterval: round(60 * event.duration) * 60]);
+        [self addAlarmTo: ekEvent offset: event.alarmOffset type: event.alarmType];
+    }
+
+    NSError *error = nil;
+    [store saveEvent: ekEvent span: EKSpanThisEvent commit: YES error: &error];
+
+    return error;
+}
+
+- (void) addCommonAttributesOf: (CalendarItem *)item to: (EKCalendarItem *)ekCalendarItem
+{
+    ekCalendarItem.title = item.description;
+    if (nil != item.note)
+    {
+        ekCalendarItem.notes = item.note;
+    }
+    if (nil != item.url)
+    {
+        ekCalendarItem.URL = [NSURL URLWithString: item.url];
+    }
+}
+
+- (void) addAlarmTo: (EKCalendarItem *)calItem offset: (NSTimeInterval)interval type: (AlarmType)type
+{
+    if (AlarmNone != type)
+    {
+        EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset: interval];
+        switch (type)
+        {
+            case AlarmMessage:
+                alarm.soundName    = nil;
+                alarm.emailAddress = nil;
+                alarm.url          = nil;
+                break;
+            case AlarmMessageWithSound:
+                alarm.soundName = @"Basso";
+                break;
+            default:
+                break;
+        }
+        [calItem addAlarm: alarm];
+    }
 }
 
 @end
+
+NSDictionary *asDictionary(NSArray *calendars)
+{
+    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity: calendars.count];
+    for (EKCalendar     *calendar in calendars)
+    {
+        if (calendar.allowsContentModifications)
+        {
+            result[calendar.title] = calendar;
+        }
+    }
+    return result;
+}
+

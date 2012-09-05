@@ -45,7 +45,7 @@ BOOL isReminderList(CalCalendar *calendar);
 - (id) init
 {
     self = [super init];
-    if(self)
+    if (self)
     {
         [self initCalendars];
     }
@@ -58,9 +58,9 @@ BOOL isReminderList(CalCalendar *calendar);
     NSArray *calendars = [[CalCalendarStore defaultCalendarStore] calendars];
     reminderCalendarsByName = [NSMutableDictionary dictionary];
     eventCalendarsByName    = [NSMutableDictionary dictionary];
-    for(CalCalendar *calendar in [calendars filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"isEditable == YES"]])
+    for (CalCalendar *calendar in [calendars filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"isEditable == YES"]])
     {
-        if(isReminderList(calendar))
+        if (isReminderList(calendar))
         {
             reminderCalendarsByName[calendar.title] = calendar;
         }
@@ -95,12 +95,12 @@ BOOL isReminderList(CalCalendar *calendar);
 
 - (BOOL) hasReminderCalendar: (NSString *)name
 {
-    return reminderCalendarsByName[name] != nil;
+    return nil != reminderCalendarsByName[name];
 }
 
 - (BOOL) hasEventCalendar: (NSString *)name
 {
-    return eventCalendarsByName[name] != nil;
+    return nil != eventCalendarsByName[name];
 }
 
 - (NSError *) addReminder: (Reminder *)reminder
@@ -108,8 +108,9 @@ BOOL isReminderList(CalCalendar *calendar);
     CalTask *calTask = [CalTask task];
     calTask.calendar = reminderCalendarsByName[reminder.calendar];
     [self addCommonAttributesOf: reminder to: calTask];
+    calTask.isCompleted = reminder.completed;
 
-    if(nil != reminder.dueDate)
+    if (nil != reminder.dueDate)
     {
         calTask.dueDate = reminder.dueDate;
 
@@ -117,17 +118,14 @@ BOOL isReminderList(CalCalendar *calendar);
         [self addAlarmTo: calTask offset: ([reminder.dueDate timeIntervalSinceDate: midnight] + reminder.alarmOffset) type: reminder.alarmType];
     }
 
-    if(reminder.completed)
-    {
-        calTask.isCompleted = YES;
-    }
-    if(PriorityNone != reminder.priority)
+    if (PriorityNone != reminder.priority)
     {
         calTask.priority = reminder.priority;
     }
 
     NSError *error = nil;
     [[CalCalendarStore defaultCalendarStore] saveTask: calTask error: &error];
+
     return error;
 }
 
@@ -139,9 +137,9 @@ BOOL isReminderList(CalCalendar *calendar);
     calEvent.isAllDay  = event.allDay;
     calEvent.startDate = event.startDate;
 
-    if(event.allDay)
+    if (event.allDay)
     {
-        if(round(event.duration) > 1)
+        if (round(event.duration) > 1)
         {
             calEvent.endDate = ([event.startDate dateByAddingTimeInterval: round(event.duration) * 86400]);
         }
@@ -159,17 +157,18 @@ BOOL isReminderList(CalCalendar *calendar);
 
     NSError *error = nil;
     [[CalCalendarStore defaultCalendarStore] saveEvent: calEvent span: CalSpanThisEvent error: &error];
+
     return error;
 }
 
 - (void) addCommonAttributesOf: (CalendarItem *)item to: (CalCalendarItem *)calItem
 {
     calItem.title = item.description;
-    if(nil != item.note)
+    if (nil != item.note)
     {
         calItem.notes = item.note;
     }
-    if(nil != item.url)
+    if (nil != item.url)
     {
         calItem.url = [NSURL URLWithString: item.url];
     }
@@ -177,11 +176,11 @@ BOOL isReminderList(CalCalendar *calendar);
 
 - (void) addAlarmTo: (CalCalendarItem *)calItem offset: (NSTimeInterval)interval type: (AlarmType)type
 {
-    if(AlarmNone != type)
+    if (AlarmNone != type)
     {
         CalAlarm *alarm = [CalAlarm alarm];
         alarm.relativeTrigger = interval;
-        switch(type)
+        switch (type)
         {
             case AlarmMessage:
                 alarm.action = CalAlarmActionDisplay;
@@ -200,7 +199,7 @@ BOOL isReminderList(CalCalendar *calendar);
 
 BOOL isReminderList(CalCalendar *calendar)
 {
-    if(!calendar.isEditable)
+    if (!calendar.isEditable)
     {
         return NO;
     }
@@ -210,13 +209,13 @@ BOOL isReminderList(CalCalendar *calendar)
     task.title    = @"Test Item (created by sched)";
     task.url      = [NSURL URLWithString: @"https://github.com/kevinbirch/sched/wiki/What-Gives"];
     task.notes    = @"This task was created by sched as part of its normal operation.  Please feel free to delete it, we're very sorry for any inconvenience.  For more information, please visit the provided URL.";
-    if(NO == [[CalCalendarStore defaultCalendarStore] saveTask: task error: nil])
+    if (NO == [[CalCalendarStore defaultCalendarStore] saveTask: task error: nil])
     {
         return NO;
     }
 
     NSError *err;
-    if(NO == ([[CalCalendarStore defaultCalendarStore] removeTask: task error: &err]))
+    if (NO == ([[CalCalendarStore defaultCalendarStore] removeTask: task error: &err]))
     {
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary: err.userInfo];
         userInfo[NSLocalizedRecoveryOptionsErrorKey] = @"Something went wrong while trying to clean up a test reminder we created in iCal.  It's probably still there so if you see something named \"Test Item\", please feel free to delete it.";

@@ -35,6 +35,6 @@
 - (NSError *) addReminder: (Reminder *)reminder;
 - (NSError *) addEvent: (Event *)event;
 
-- (BOOL) hasReminderCalendar: (NSString *)string;
-- (BOOL) hasEventCalendar: (NSString *)string;
+- (BOOL) hasReminderCalendar: (NSString *)name;
+- (BOOL) hasEventCalendar: (NSString *)name;
 @end

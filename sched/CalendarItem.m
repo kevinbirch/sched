@@ -45,7 +45,7 @@
 - (id) init
 {
     self = [super init];
-    if(self)
+    if (self)
     {
         alarmType = AlarmMessageWithSound;
     }

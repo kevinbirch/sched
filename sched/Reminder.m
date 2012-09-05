@@ -39,9 +39,9 @@
 - (id) init
 {
     self = [super init];
-    if(self)
+    if (self)
     {
-        priority = PriorityNone;
+        priority  = PriorityNone;
         completed = NO;
     }
 

@@ -14,6 +14,7 @@
 		19F40F9B3ABB89313F304CDD /* CalendarStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */; };
 		8F0773B515F442F3000BFC9B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0773B315F442F3000BFC9B /* Preferences.m */; };
 		8F0773B615F442F3000BFC9B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0773B415F442F3000BFC9B /* Preferences.xib */; };
+		8FAAEE3815F6EFEE00B7E871 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAAEE3715F6EFEE00B7E871 /* EventKit.framework */; };
 		8FF78BB715EEA5B100632460 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8FF78BB615EEA5B100632460 /* App.icns */; };
 		8FF78BBA15EEE07100632460 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF78BB915EEE07100632460 /* CalendarItem.m */; };
 		8FFDFD0E15EFDB01000B8994 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FFDFD0D15EFDB01000B8994 /* README.md */; };
@@ -31,7 +32,6 @@
 		19F4038DFFC197B6BA115AE7 /* NSDate+Midnight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Midnight.h"; sourceTree = "<group>"; };
 		19F4058453E8912EF5CA166B /* NSDate+Midnight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Midnight.m"; sourceTree = "<group>"; };
 		19F40643D0C6B24D7C352E8A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		19F407B13DFAA72F16AD871B /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = TODO.md; sourceTree = "<group>"; };
 		19F408EA14F3C28BE8B957FC /* CalendarStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarStoreController.h; sourceTree = "<group>"; };
 		19F409E70556A823EB69DFE3 /* EventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventKitController.h; sourceTree = "<group>"; };
 		19F40ABE43531C4116B713A7 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
@@ -42,6 +42,7 @@
 		8F0773B315F442F3000BFC9B /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = ../Preferences.m; sourceTree = "<group>"; };
 		8F0773B415F442F3000BFC9B /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Preferences.xib; path = ../Preferences.xib; sourceTree = "<group>"; };
 		8F9C064115E472D700F45542 /* sched.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sched.entitlements; sourceTree = "<group>"; };
+		8FAAEE3715F6EFEE00B7E871 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8FF78BB615EEA5B100632460 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
 		8FF78BB815EEE07100632460 /* CalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItem.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
 		8FF78BB915EEE07100632460 /* CalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItem.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
@@ -68,6 +69,7 @@
 			files = (
 				EE1E50160E72535BEABEAAAC /* Cocoa.framework in Frameworks */,
 				EE1E50160E72535BEABEAAC4 /* CalendarStore.framework in Frameworks */,
+				8FAAEE3815F6EFEE00B7E871 /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +123,6 @@
 		EE1E50160E72535BEABEAA9E = {
 			isa = PBXGroup;
 			children = (
-				19F407B13DFAA72F16AD871B /* TODO.md */,
 				EE1E50160E72535BEABEAA9F /* Products */,
 				EE1E50160E72535BEABEAAAA /* Frameworks */,
 				EE1E50160E72535BEABEAAB1 /* sched */,
@@ -139,6 +140,7 @@
 		EE1E50160E72535BEABEAAAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FAAEE3715F6EFEE00B7E871 /* EventKit.framework */,
 				EE1E50160E72535BEABEAAC3 /* CalendarStore.framework */,
 				EE1E50160E72535BEABEAAAB /* Cocoa.framework */,
 				EE1E50160E72535BEABEAAAD /* Other Frameworks */,
