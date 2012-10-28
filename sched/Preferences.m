@@ -27,9 +27,9 @@
 @implementation Preferences
 {
 @private
-    NSView *remindersView;
-    NSView *eventsView;
-    NSToolbar *toolbar;
+    NSView       *remindersView;
+    NSView       *eventsView;
+    NSToolbar    *toolbar;
     NSDatePicker *datePicker;
     id <CalendarController> controller;
 }
@@ -39,10 +39,10 @@
 @synthesize toolbar;
 @synthesize datePicker;
 
-- (id) initWithController: (id<CalendarController>)calendarController
+- (id) initWithController: (id <CalendarController>)calendarController
 {
     self = [super initWithWindowNibName: @"Preferences"];
-    if(self)
+    if (self)
     {
         controller = calendarController;
     }

@@ -27,13 +27,13 @@
 
 @interface Preferences : NSWindowController
 
-@property (atomic, strong) IBOutlet NSView *remindersView;
-@property (atomic, strong) IBOutlet NSView *eventsView;
-@property (atomic, strong) IBOutlet NSToolbar *toolbar;
+@property (atomic, strong) IBOutlet NSView       *remindersView;
+@property (atomic, strong) IBOutlet NSView       *eventsView;
+@property (atomic, strong) IBOutlet NSToolbar    *toolbar;
 @property (atomic, strong) IBOutlet NSDatePicker *datePicker;
-@property (nonatomic, readonly) NSArray *reminderCalendars;
-@property (nonatomic, readonly) NSArray *eventCalendars;
-@property (nonatomic, copy) NSDate *allDayAlarm;
+@property (nonatomic, readonly) NSArray          *reminderCalendars;
+@property (nonatomic, readonly) NSArray          *eventCalendars;
+@property (nonatomic, copy) NSDate               *allDayAlarm;
 
 - (id) initWithController: (id <CalendarController>)calendarController;
 

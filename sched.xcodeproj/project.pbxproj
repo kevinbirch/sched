@@ -15,7 +15,7 @@
 		8F0773B515F442F3000BFC9B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0773B315F442F3000BFC9B /* Preferences.m */; };
 		8F0773B615F442F3000BFC9B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0773B415F442F3000BFC9B /* Preferences.xib */; };
 		8FAAEE3815F6EFEE00B7E871 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAAEE3715F6EFEE00B7E871 /* EventKit.framework */; };
-		8FF78BB715EEA5B100632460 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8FF78BB615EEA5B100632460 /* App.icns */; };
+		8FF78BB715EEA5B100632460 /* sched.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8FF78BB615EEA5B100632460 /* sched.icns */; };
 		8FF78BBA15EEE07100632460 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF78BB915EEE07100632460 /* CalendarItem.m */; };
 		8FFDFD0E15EFDB01000B8994 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FFDFD0D15EFDB01000B8994 /* README.md */; };
 		EE1E50160E72535BEABEAAAC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1E50160E72535BEABEAAAB /* Cocoa.framework */; };
@@ -38,12 +38,12 @@
 		19F40B0B62DEB1A818900D80 /* CalendarStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarStoreController.m; sourceTree = "<group>"; };
 		19F40E7775D0DDBD08F3B9DA /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		19F40E810CD2A92CB010EE15 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
-		8F0773B215F442F3000BFC9B /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = ../Preferences.h; sourceTree = "<group>"; };
-		8F0773B315F442F3000BFC9B /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = ../Preferences.m; sourceTree = "<group>"; };
-		8F0773B415F442F3000BFC9B /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Preferences.xib; path = ../Preferences.xib; sourceTree = "<group>"; };
+		8F0773B215F442F3000BFC9B /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = Preferences.h; sourceTree = "<group>"; };
+		8F0773B315F442F3000BFC9B /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = Preferences.m; sourceTree = "<group>"; };
+		8F0773B415F442F3000BFC9B /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Preferences.xib; path = en.lproj/Preferences.xib; sourceTree = SOURCE_ROOT; };
 		8F9C064115E472D700F45542 /* sched.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sched.entitlements; sourceTree = "<group>"; };
 		8FAAEE3715F6EFEE00B7E871 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		8FF78BB615EEA5B100632460 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
+		8FF78BB615EEA5B100632460 /* sched.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = sched.icns; sourceTree = "<group>"; };
 		8FF78BB815EEE07100632460 /* CalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItem.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
 		8FF78BB915EEE07100632460 /* CalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItem.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
 		8FFDFD0D15EFDB01000B8994 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -58,7 +58,7 @@
 		EE1E50160E72535BEABEAAB9 /* sched-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sched-Prefix.pch"; sourceTree = "<group>"; };
 		EE1E50160E72535BEABEAABD /* Scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
 		EE1E50160E72535BEABEAABE /* Scheduler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scheduler.m; sourceTree = "<group>"; };
-		EE1E50160E72535BEABEAAC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EE1E50160E72535BEABEAAC0 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenu.xib; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		EE1E50160E72535BEABEAAC3 /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -76,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19F404F49EA1EB3F786DEA72 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EE1E50160E72535BEABEAAC1 /* MainMenu.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		8F0773B715F4432F000BFC9B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,9 +121,8 @@
 		8F0773BE15F44CAD000BFC9B /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				8F0773B415F442F3000BFC9B /* Preferences.xib */,
-				8F0773B215F442F3000BFC9B /* Preferences.h */,
 				8F0773B315F442F3000BFC9B /* Preferences.m */,
+				8F0773B215F442F3000BFC9B /* Preferences.h */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -161,15 +168,16 @@
 		EE1E50160E72535BEABEAAB1 /* sched */ = {
 			isa = PBXGroup;
 			children = (
+				8F0773B415F442F3000BFC9B /* Preferences.xib */,
 				8FFDFD0D15EFDB01000B8994 /* README.md */,
 				8F0773B715F4432F000BFC9B /* Model */,
 				8F0773B815F4435A000BFC9B /* Controllers */,
 				8F0773BE15F44CAD000BFC9B /* Preferences */,
-				EE1E50160E72535BEABEAAC1 /* MainMenu.xib */,
 				EE1E50160E72535BEABEAABD /* Scheduler.h */,
 				EE1E50160E72535BEABEAABE /* Scheduler.m */,
 				8F0773B915F4436E000BFC9B /* Util */,
 				EE1E50160E72535BEABEAAB2 /* Supporting Files */,
+				19F404F49EA1EB3F786DEA72 /* UI */,
 			);
 			path = sched;
 			sourceTree = "<group>";
@@ -177,7 +185,7 @@
 		EE1E50160E72535BEABEAAB2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8FF78BB615EEA5B100632460 /* App.icns */,
+				8FF78BB615EEA5B100632460 /* sched.icns */,
 				8F9C064115E472D700F45542 /* sched.entitlements */,
 				EE1E50160E72535BEABEAAB9 /* sched-Prefix.pch */,
 				EE1E50160E72535BEABEAAB7 /* main.m */,
@@ -213,7 +221,7 @@
 		EE1E50160E72535BEABEAA9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = com.webguys;
 			};
 			buildConfigurationList = EE1E50160E72535BEABEAA9D /* Build configuration list for PBXProject "sched" */;
@@ -240,7 +248,7 @@
 			files = (
 				EE1E50160E72535BEABEAAB6 /* InfoPlist.strings in Resources */,
 				EE1E50160E72535BEABEAAC2 /* MainMenu.xib in Resources */,
-				8FF78BB715EEA5B100632460 /* App.icns in Resources */,
+				8FF78BB715EEA5B100632460 /* sched.icns in Resources */,
 				8FFDFD0E15EFDB01000B8994 /* README.md in Resources */,
 				8F0773B615F442F3000BFC9B /* Preferences.xib in Resources */,
 			);
@@ -279,7 +287,7 @@
 		EE1E50160E72535BEABEAAC1 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE1E50160E72535BEABEAAC0 /* en */,
+				EE1E50160E72535BEABEAAC0 /* MainMenu.xib */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
