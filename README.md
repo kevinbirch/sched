@@ -71,7 +71,7 @@ stopped working, as the calendar substrate changed over time.  However, I've sav
 
 ## License
 
-Copyright (c) 2012 Kevin Birch <kmb@pobox.com>
+Copyright (c) 2012 [Kevin Birch](kmb@pobox.com)
 
 Distributed under an [MIT-style](http://www.opensource.org/licenses/mit-license.php) license.
 
