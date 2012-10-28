@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19F4014F15CAAC95FE1B5A14 /* NSDate+Midnight.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F4058453E8912EF5CA166B /* NSDate+Midnight.m */; };
+		19F405997A252C3E01C0870B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F402F90B7EEB7C1373DF0A /* Preferences.xib */; };
 		19F4090BF0B9BD1B5812D3C8 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E810CD2A92CB010EE15 /* Reminder.m */; };
 		19F409D16763B1F37CA3D453 /* EventKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40182DD2C9D3AB7F6C7F0 /* EventKitController.m */; };
 		19F409D46C939099185AAD3F /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F40E7775D0DDBD08F3B9DA /* Event.m */; };
@@ -30,6 +31,7 @@
 		19F401B19BDFA418CAEE1E70 /* CalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
 		19F4038DFFC197B6BA115AE7 /* NSDate+Midnight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Midnight.h"; sourceTree = "<group>"; };
 		19F4058453E8912EF5CA166B /* NSDate+Midnight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Midnight.m"; sourceTree = "<group>"; };
+		19F405BB40E0CEBD93054D96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
 		19F40643D0C6B24D7C352E8A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		19F408EA14F3C28BE8B957FC /* CalendarStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarStoreController.h; sourceTree = "<group>"; };
 		19F409E70556A823EB69DFE3 /* EventKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventKitController.h; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		8F0773BE15F44CAD000BFC9B /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				19F402F90B7EEB7C1373DF0A /* Preferences.xib */,
 				8F0773B315F442F3000BFC9B /* Preferences.m */,
 				8F0773B215F442F3000BFC9B /* Preferences.h */,
 			);
@@ -176,8 +179,7 @@
 				EE1E50160E72535BEABEAABD /* Scheduler.h */,
 				EE1E50160E72535BEABEAABE /* Scheduler.m */,
 			);
-			name = src;
-			path = sched;
+			path = src;
 			sourceTree = "<group>";
 		};
 		EE1E50160E72535BEABEAAB2 /* Supporting Files */ = {
@@ -248,6 +250,7 @@
 				EE1E50160E72535BEABEAAC2 /* MainMenu.xib in Resources */,
 				8FF78BB715EEA5B100632460 /* sched.icns in Resources */,
 				8FFDFD0E15EFDB01000B8994 /* README.md in Resources */,
+				19F405997A252C3E01C0870B /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +276,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		19F402F90B7EEB7C1373DF0A /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19F405BB40E0CEBD93054D96 /* en */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
 		EE1E50160E72535BEABEAAB5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -391,11 +402,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_ENTITLEMENTS = sched/sched.entitlements;
+				CODE_SIGN_ENTITLEMENTS = src/sched.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sched/sched-Prefix.pch";
-				INFOPLIST_FILE = "sched/sched-Info.plist";
+				GCC_PREFIX_HEADER = "src/sched-Prefix.pch";
+				INFOPLIST_FILE = "src/sched-Info.plist";
 				INSTALL_PATH = "$(LOCAL_ADMIN_APPS_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,11 +419,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_ENTITLEMENTS = sched/sched.entitlements;
+				CODE_SIGN_ENTITLEMENTS = src/sched.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "sched/sched-Prefix.pch";
-				INFOPLIST_FILE = "sched/sched-Info.plist";
+				GCC_PREFIX_HEADER = "src/sched-Prefix.pch";
+				INFOPLIST_FILE = "src/sched-Info.plist";
 				INSTALL_PATH = "$(LOCAL_ADMIN_APPS_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
