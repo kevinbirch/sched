@@ -11,7 +11,7 @@ When you run the app, it looks like this:
 
 ![initial window](https://raw.github.com/kevinbirch/sched/master/images/sched-reminder.png)
 
-To create a new reminder, simply enter the description, hit the return key and you're done.
+To create a new reminder, simply enter the description, hit the return key and you're done!
 
 Reminder items require at least a description, all of the other settings are optional or defaulted.  If you want to 
 set a due date, tab to the second field and enter a date and time string such as:
